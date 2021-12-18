@@ -77,7 +77,13 @@ class App(Frame):
         screen_stop_x, screen_stop_y = pyautogui.position()
         print('release: ', screen_stop_x, screen_stop_y)
 
-        window.wm_state("iconic") 
+        window.wm_state("iconic")
+
+        if (self.screen_start_x >= screen_stop_x):
+            self.screen_start_x, screen_stop_x = screen_stop_x, self.screen_start_x
+        if (self.screen_start_y >= screen_stop_y):
+            self.screen_start_y, screen_stop_y = screen_stop_y, self.screen_start_y
+
         im = pyscreenshot.grab(bbox = (self.screen_start_x, self.screen_start_y, screen_stop_x, screen_stop_y))
         window.wm_state("zoomed")
         
