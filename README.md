@@ -1,4 +1,5 @@
 <p align="center">
+![favicon ](https://user-images.githubusercontent.com/71903279/187092480-2cd515da-fa9c-4878-bb8e-03e577aa8e68.png)
 
  <img src="https://i.imgur.com/rSyq3MW.png" alt="The Documentation Compendium"></a>
 </p>
