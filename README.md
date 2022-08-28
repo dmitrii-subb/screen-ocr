@@ -5,8 +5,10 @@
 
 <h3 align="center">screen-ocr</h3>
 <p align = "center">Tool for ...</p>
+![image](https://user-images.githubusercontent.com/71903279/187092452-bd42d238-0def-4a52-baae-f42c1ffac4b9.png)
 
- <img src="http://recordit.co/WPvGYmyWrY" alt="The Documentation Compendium"></a>
+
+<img src="http://recordit.co/WPvGYmyWrY"></a>
 <div align="center">
 
   [![Status](https://img.shields.io/badge/status-active-success.svg)]()
