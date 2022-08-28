@@ -1,7 +1,5 @@
 <h3 align="center">screen-ocr</h3>
 
-<p align = "center">Tool for ...</p>
-
 <p align="center">
  <img src="http://g.recordit.co/J3qf580KOj.gif" alt="The Documentation Compendium"></a>
 </p>
@@ -13,6 +11,9 @@
 
 </div>
 
+<p align = "center">Утилита для распознавания текста. Текст будет скопирован в буфер обмена</p>
 ---
 
 ## Установка
+1. Установить pytesseract.
+2. Установить утилиту.
