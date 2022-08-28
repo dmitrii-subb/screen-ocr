@@ -17,3 +17,5 @@
 ## Установка
 1. Установить pytesseract.
 2. Установить утилиту.
+
+<a href="https://www.flaticon.com/ru/free-icons/s" title="s иконки">Иконка бла взята здесь</a>
