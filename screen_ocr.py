@@ -72,7 +72,7 @@ class App(Frame):
         )
 
     def on_left_mouse_button_release(self, event):
-        screen_stop_x, screen_stop_y = pyautogui.position(){}
+        screen_stop_x, screen_stop_y = pyautogui.position()
 
         self.window.withdraw()
 
