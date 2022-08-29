@@ -1,7 +1,7 @@
 <h3 align="center">screen-ocr</h3>
 
 <p align="center">
- <img src="http://g.recordit.co/J3qf580KOj.gif" alt="The Documentation Compendium"></a>
+ <img src="https://user-images.githubusercontent.com/71903279/187302584-c3ea2e11-2e55-4422-9d0b-3eec23918848.gif" alt="The Documentation Compendium"></a>
 </p>
 
 <div align="center">
@@ -18,4 +18,4 @@
 1. Установить pytesseract.
 2. Установить утилиту.
 
-<a href="https://www.flaticon.com/ru/free-icons/s" title="s иконки">Иконка бла взята здесь</a>
+<a href="https://www.flaticon.com/ru/free-icons/s" title="s иконки">Иконка была взята здесь</a>
