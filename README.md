@@ -15,7 +15,14 @@
 ---
 
 ## Установка
-1. Установить pytesseract.
-2. Установить утилиту.
+
+- 1
+```bash
+$ git clone https://github.com/dmitrii-subb/screen-ocr.git
+$ cd screen-ocr
+$ pip install -r requirements.txt
+```
+- 2
+Распаковать архив Tesseract-OCR и поместить в папку с screen-ocr.py
 
 <a href="https://www.flaticon.com/ru/free-icons/s" title="s иконки">Иконка была взята здесь</a>
