@@ -1,3 +1,4 @@
+import sys
 import pyautogui
 import pyscreenshot
 import pytesseract
@@ -11,7 +12,7 @@ from PIL import Image
 class App(Frame):
     def __init__(self,window):
 
-        self.tesseract_path = r'D:\Apps\Tesseract-OCR\tesseract.exe'
+        self.tesseract_path = r'.\Tesseract-OCR\tesseract.exe'
 
         Frame.__init__(self,window)
         self.window = window
@@ -74,33 +75,38 @@ class App(Frame):
     def on_left_mouse_button_release(self, event):
         screen_stop_x, screen_stop_y = pyautogui.position()
 
-        self.window.withdraw()
+        try:
+            if (self.screen_start_x >= screen_stop_x):
+                self.screen_start_x, screen_stop_x = screen_stop_x, self.screen_start_x
+            if (self.screen_start_y >= screen_stop_y):
+                self.screen_start_y, screen_stop_y = screen_stop_y, self.screen_start_y
 
-        if (self.screen_start_x >= screen_stop_x):
-            self.screen_start_x, screen_stop_x = screen_stop_x, self.screen_start_x
-        if (self.screen_start_y >= screen_stop_y):
-            self.screen_start_y, screen_stop_y = screen_stop_y, self.screen_start_y
-
-        img = pyscreenshot.grab(
-            bbox = (
-                self.screen_start_x,
-                self.screen_start_y,
-                screen_stop_x,
-                screen_stop_y
+            img = pyscreenshot.grab(
+                bbox = (
+                    self.screen_start_x,
+                    self.screen_start_y,
+                    screen_stop_x,
+                    screen_stop_y
+                )
             )
-        )
 
-        pytesseract.pytesseract.tesseract_cmd = self.tesseract_path
-        text = pytesseract.image_to_string(img)
+            pytesseract.pytesseract.tesseract_cmd = self.tesseract_path
+            text = pytesseract.image_to_string(img)
+
+        except Exception as err:
+            text = f'Error -> {err}'
+            clipboard.copy(text)
+            sys.exit(0)
 
         clipboard.copy(text)
         self.hide_window_in_taskbar()
 
     def hide_window_in_taskbar(self):
         '''Hide the window and show on the system taskbar'''
+        self.window.withdraw()
         favicon=Image.open("favicon.ico")
         menu = ( item('Exit', self.exit_window), item('Run', self.run_window) )
-        icon = pystray.Icon("name", favicon, "My System Tray Icon", menu)
+        icon = pystray.Icon("screen-ocr", favicon, "screen-ocr icon", menu)
         icon.run()
 
 
@@ -112,4 +118,5 @@ if __name__ == "__main__":
 
     app = App(window)
     app.pack()
+    app.hide_window_in_taskbar()
     window.mainloop()
